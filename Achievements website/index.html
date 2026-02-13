@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jayrius - Leadership Achievements</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 60px 20px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(-45deg, #e3f2fd, #f3e5f5, #fce4ec, #e1f5fe);
+    background-size: 400% 400%;
+    animation: gradientBG 20s ease infinite;
+    text-align: center;
+}
+
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 60px;
+    background: linear-gradient(90deg, #1565c0, #7b1fa2, #ec407a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    transition: all 0.5s ease;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    justify-items: center;
+}
+
+.card {
+    background: rgba(255,255,255,0.9);
+    border-radius: 24px;
+    padding: 60px 30px 40px 30px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid transparent;
+    background-clip: padding-box;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border-radius: 28px;
+    background: linear-gradient(135deg, #42a5f5, #ab47bc, #ec407a, #fbc02d);
+    z-index: -1;
+    filter: blur(8px);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: 700;
+    background: linear-gradient(90deg, #1565c0, #7b1fa2, #ec407a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.4s ease;
+}
+
+.card:hover h3 {
+    transform: scale(1.08);
+    letter-spacing: 1px;
+}
+
+.card.animate {
+    animation: pulse 0.6s ease, glow 0.6s ease;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 0 rgba(255,255,255,0); }
+    50% { box-shadow: 0 0 25px rgba(255,255,255,0.6); }
+    100% { box-shadow: 0 0 0 rgba(255,255,255,0); }
+}
+
+@media (max-width: 900px) {
+    .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+    .grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<h1>Jayrius - Leadership Achievements</h1>
+
+<div class="grid">
+
+<div class="card" onclick="animateCard(this)">
+    <h3>Eagles Award - P4</h3>
+</div>
+
+<div class="card" onclick="animateCard(this)">
+    <h3>Edusave Award - P4</h3>
+</div>
+
+<div class="card" onclick="animateCard(this)">
+    <h3>Eagles Award - P5</h3>
+</div>
+
+<div class="card" onclick="animateCard(this)">
+    <h3>Edusave Award - P5</h3>
+</div>
+
+<div class="card" onclick="animateCard(this)">
+    <h3>Eagles Award - P6</h3>
+</div>
+
+<div class="card" onclick="animateCard(this)">
+    <h3>Edusave Award - P6</h3>
+</div>
+
+<div class="card" onclick="animateCard(this)">
+    <h3>Edusave Award - S1</h3>
+</div>
+
+</div>
+
+<script>
+function animateCard(card) {
+    card.classList.add("animate");
+    setTimeout(() => {
+        card.classList.remove("animate");
+    }, 600);
+}
+</script>
+
+</body>
+</html>
